@@ -3,7 +3,7 @@ import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
-const apiUrl = 'https://evening-inlet-09970.herokuapp.com';
+const apiUrl = 'https://evening-inlet-09970.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root',
@@ -13,12 +13,16 @@ export class FetchApiDataService {
 
   // User Registration
   userRegistration(userDetails: any): Observable<any> {
-    return this.http.post(apiUrl + 'users', userDetails).pipe(catchError(this.handleError));
+    const url = `${apiUrl}users`; // Construct the complete URL
+    return this.http.post(url, userDetails).pipe(catchError(this.handleError));
   }
+  
+
 
   // User Login
-  userLogin(userDetails: any): Observable<any> {
-    return this.http.post(apiUrl + 'login', userDetails).pipe(catchError(this.handleError));
+  userLogin(credentials: { Username: string, Password: string }): Observable<any> {
+    const url = `${apiUrl}login`; // Construct the complete URL
+    return this.http.post<any>(url, credentials).pipe(catchError(this.handleError));
   }
 
   // Get All Movies
