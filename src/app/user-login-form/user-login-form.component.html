@@ -1,6 +1,5 @@
-<p>user-login-form works!</p>
 <!-- user-login-form.component.html -->
-<p> User Login Form </p>
+<p>Login</p>
 <mat-card>
     <mat-card-header>
         <mat-card-title>Login</mat-card-title>
@@ -10,7 +9,7 @@
             <mat-form-field>
                 <input
                     matInput
-                    [(ngModel)]="credentials.Username"
+                    [(ngModel)]="userData.Username"
                     placeholder="Username"
                     type="text"
                     name="Username"
@@ -20,7 +19,7 @@
             <mat-form-field>
                 <input
                     matInput
-                    [(ngModel)]="credentials.Password"
+                    [(ngModel)]="userData.Password"
                     type="password"
                     placeholder="Password"
                     name="Password"
