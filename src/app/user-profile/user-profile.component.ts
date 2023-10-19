@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -18,7 +17,7 @@ export class UserProfileComponent implements OnInit {
 
 
 
-  @Input() userData = { Name: '', Username: '', Password: '', Email: '', Birthday: '', };
+  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '', };
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -31,11 +30,6 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
-
- /**
-  *  get user will get all of the users data so we can display it. 
-  *  get all movies will filter all of the movies id that are in the favorite movies array. 
- */
 
   getUser(): void {
     this.fetchApiData.getOneUser().subscribe((response: any) => {
@@ -51,9 +45,7 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
-  /**
-   * edit user will take the new user data and send it back to the db and set the localstorage 
-   */
+  
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((data) => {
       localStorage.setItem('user', JSON.stringify(data));
@@ -70,15 +62,12 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  /**
-   *  delete user will delete their account permanently and be sent back to the welcome screen
-   */
 
   deleteUser(): void {
     if (confirm('are you sure?')) {
       this.router.navigate(['welcome']).then(() => {
         this.snackBar.open(
-          'You have successfully deleted your account',
+          'deleted!',
           'OK',
           {
             duration: 2000,
@@ -86,7 +75,6 @@ export class UserProfileComponent implements OnInit {
         );
       });
       this.fetchApiData.deleteUser().subscribe((result) => {
-        // console.log(result);
         localStorage.clear();
       });
     }

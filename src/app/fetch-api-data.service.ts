@@ -13,7 +13,7 @@ export class FetchApiDataService {
 
   // User Registration
   userRegistration(userDetails: any): Observable<any> {
-    const url = `${apiUrl}users`; // Construct the complete URL
+    const url = `${apiUrl}users`;
     return this.http.post(url, userDetails).pipe(catchError(this.handleError));
   }
   
