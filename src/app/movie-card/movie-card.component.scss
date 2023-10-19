@@ -7,6 +7,27 @@
   align-content: center;
 }
 
+.profile-view-header-container {
+  grid-column: 1 / -1;
+  background-color: #27d0ff;
+  padding: 20px;
+  padding-bottom: 5rem;
+  border-radius: 5px;
+}
+
+
+
+
+.movie-cards {
+  display: grid;
+  position: relative;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  width: 90vw;
+  left: 4vw;
+}
+
 .movie-card {
   max-width: 100%;
   border-radius: 5px;
