@@ -23,7 +23,7 @@ import { MatListModule } from '@angular/material/list';
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
-  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+  { path: '', redirectTo: 'welcome!', pathMatch: 'prefix' },
 ];
 
 
