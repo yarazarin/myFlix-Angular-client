@@ -1,0 +1,21 @@
+.dialog-content,
+.dialog-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.dialog-actions {
+  margin-top: 20px;
+}
+.dialog-actions p{
+  margin: 0;
+  z-index: 9;
+  position: relative;
+  top: -20px;
+  font-size: 12px;
+  color: blaack;
+}
