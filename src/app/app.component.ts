@@ -25,10 +25,4 @@ export class AppComponent {
       width: '500px',
     });
   }
-
-  // openUserLoginDialog(): void {
-  //   this.dialog.open(UserLoginFormComponent, {
-  //     width: '280px',
-  //   });
-  // }
 }
