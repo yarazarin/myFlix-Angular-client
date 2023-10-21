@@ -1,23 +1,36 @@
+
 <div class="movie-card-container">
+  <a routerLink="/profile">
+    <mat-icon class="profile_icon">account_circle</mat-icon>
+  </a>
   <div class="profile-view-header-container">
-    <div >
-      <button mat-raised-button color="simple" routerLink="/profile">Update Profile</button>
-    </div>
   </div>
   <div class="movie-cards">
     <mat-card *ngFor="let movie of movies" class="movie-card">
-    <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <mat-card-subtitle
-        >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
-      >
-    </mat-card-header>
-    <img [src]="movie.imagePath" [alt]="movie.Title" />
-    <mat-card-actions>
-      <button mat-button color="basic" (click)="openMovieDetailsDialog(movie)">Genre</button>
-      <button mat-button color="basic" (click)="openMovieDetailsDialog(movie)">Director</button>      
-      <mat-icon>favorite_border</mat-icon>
-    </mat-card-actions>
-  </mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ movie.Title }}</mat-card-title>
+        <mat-card-subtitle
+          >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
+        >
+      </mat-card-header>
+      <img [src]="movie.imagePath" [alt]="movie.Title" />
+      <mat-card-actions>
+        <button
+          mat-button
+          color="basic"
+          (click)="openMovieDetailsDialog(movie)"
+        >
+          Genre
+        </button>
+        <button
+          mat-button
+          color="basic"
+          (click)="openMovieDetailsDialog(movie)"
+        >
+          Director
+        </button>
+        <mat-icon>favorite_border</mat-icon>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

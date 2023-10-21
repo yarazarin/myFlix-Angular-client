@@ -21,6 +21,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
+
+
+
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
@@ -54,6 +59,9 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatIconModule,
     MatListModule,
+    MatToolbarModule,
+    MatDividerModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

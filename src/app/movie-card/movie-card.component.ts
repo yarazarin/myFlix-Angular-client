@@ -30,7 +30,7 @@ export class MovieCardComponent implements OnInit {
   openMovieDetailsDialog(movie: any): void {
     const dialogRef = this.dialog.open(MovieDetailsComponent, {
       width: '400px',
-      data: { movie },
+      data: movie,
     });
 
     dialogRef.afterClosed().subscribe(() => {

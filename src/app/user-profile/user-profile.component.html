@@ -1,24 +1,32 @@
-<div style="padding:1rem">
-  <h1>Profile</h1>
-  <p>Username: {{user.Username}}</p>
-  <p>Email: {{user.Email}}</p>
+<a mat-button [routerLink]="['/movies']">← Back to movies</a>
 
-  <h2>Update Profile</h2>
-  <form>
-    <mat-form-field>
-      <input matInput [(ngModel)]="userData.Password" minlength="8" type="password" placeholder="Password"
-        name="Password" required>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
-    </mat-form-field>
-  </form>
-  <button mat-raised-button (click)="editUser()" color="primary">
-    Update
-  </button>
+<div class="centered-container">
+  <div class="profile-container">
+    <h1 class="profile-heading">Profile</h1>
+    <div class="profile-info">
+      <p>Username: {{ user.Username }}</p>
+      <p>Email: {{ user.Email }}</p>
+    </div>
 
-  <button mat-button (click)="deleteUser()" color="warn">Remove account permanently</button>
+    <h2 class="update-heading">Update Profile</h2>
+    <form class="update-form">
+      <mat-form-field class="form-field">
+        <input matInput [(ngModel)]="userData.Username" minlength="8" type="Username" placeholder="Username" name="Username" required>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput [(ngModel)]="userData.Password" minlength="8" type="password" placeholder="Password" name="Password" required>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
+      </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="editUser()" color="primary" class="update-button">
+      Update
+    </button>
+
+    <button mat-button (click)="deleteUser()" color="" class="delete-button">Remove account permanently</button>
+  </div>
 </div>
