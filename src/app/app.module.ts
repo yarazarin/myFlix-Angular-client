@@ -24,7 +24,9 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 
-
+/**
+ * Defines the routing for the Angular application.
+ */
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -32,7 +34,9 @@ const appRoutes: Routes = [
   { path: 'profile', component: UserProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
-
+/**
+ * Main module for the Angular application.
+ */
 
 @NgModule({
   declarations: [
