@@ -3,7 +3,7 @@ import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
-const apiUrl = 'https://evening-inlet-09970.herokuapp.com/';
+const apiUrl = 'https://mern-blog-server-9l5p.onrender.com/';
 /**
  * Service for making API requests to interact with the backend.
  */
